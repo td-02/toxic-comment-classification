@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h1>Analysis Results for Video ID: {{ video_id }}</h1>
+
+    <div class="comment-list">
+      {% for comment in comments %}
+        <div class="comment-box 
+            {% if comment.toxicity_score > 0.7 %}toxic
+            {% elif comment.toxicity_score > 0.4 %}neutral
+            {% else %}clean{% endif %}">
+          <p>{{ comment.comment }}</p>
+          <div class="toxicity-meter">
+            <div class="fill" style="width: {{ comment.toxicity_score*100 }}%"></div>
+          </div>
+          <span>Score: {{ "%.2f"|format(comment.toxicity_score) }}</span>
+        </div>
+      {% endfor %}
+    </div>
+
+    <a href="/">Analyze Another Video</a>
+</body>
+</html>

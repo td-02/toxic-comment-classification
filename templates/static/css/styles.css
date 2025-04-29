@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .comment-list {
+    margin-top: 20px;
+  }
+  
+  .comment-box {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .toxic {
+    border-left: 4px solid #ff4d4d;
+  }
+  
+  .clean {
+    border-left: 4px solid #4CAF50;
+  }
+  
+  .neutral {
+    border-left: 4px solid #ffc107;
+  }
+  
+  .toxicity-meter {
+    height: 5px;
+    background: #eee;
+  }
+  
+  .fill {
+    height: 100%;
+    background: #ff4d4d;
+  }
+  
